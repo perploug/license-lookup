@@ -1,0 +1,32 @@
+{
+  "name": "dependency-license",
+  "version": "1.0.0",
+  "description": "Lightweight Package License Detector designed to run without access to the entire filesystem",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perploug/Dependency-License.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perploug/Dependency-License/issues"
+  },
+  "homepage": "https://github.com/perploug/Dependency-License#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "@types/minimatch": "^3.0.3",
+    "@types/node-fetch": "^2.1.4",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "minimatch": "^3.0.4",
+    "node-fetch": "^2.3.0"
+  }
+}
