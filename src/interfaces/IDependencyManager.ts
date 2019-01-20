@@ -1,4 +1,5 @@
 import { IDependency } from "./IDependency";
+import { IDependencyLookUp } from "./IDependencyLooKUp";
 
 export interface IDependencyManager {
   name: string; //Identity

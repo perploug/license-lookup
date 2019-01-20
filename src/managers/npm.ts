@@ -1,7 +1,7 @@
 import { IDependencyManager } from "../interfaces/IDependencyManager";
 import { IDependency } from "../interfaces/IDependency";
 import fetch from "node-fetch";
-import { IDependencyLookUp } from "../interfaces/IDependencyLoopup";
+import { IDependencyLookUp } from "../interfaces/IDependencyLooKUp";
 
 
 export class Npm implements IDependencyManager{
