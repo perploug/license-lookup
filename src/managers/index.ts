@@ -1,6 +1,7 @@
 import { IDependencyManager } from "../interfaces/IDependencyManager";
 import {Npm} from "./npm"
 import {Pip} from "./pip"
+import { Sbt } from "./sbt";
 import minimatch = require("minimatch");
 
 // Holds all dependency managers, based on a collection of paths, can determine if
@@ -13,6 +14,7 @@ export class ManagerFactory {
       this.managers = new Array<IDependencyManager>();
       this.managers.push(new Npm());
       this.managers.push(new Pip());
+      this.managers.push(new Sbt());
   }
   
   // this will return a list of files to process, 
