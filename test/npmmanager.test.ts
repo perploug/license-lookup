@@ -24,4 +24,8 @@ test('Npm Manager looks up dependencies from string',async () => {
 
   expect(lookUps[0].found).toBe(true);
   expect(lookUps[0].license).toBe("MIT");
+  expect(lookUps.every(x => x.license !== undefined)).toBe(true);
+  
+  // we expect all dependencies to be found in this test
+  expect(lookUps.every(x => x.found == true)).toBe(true);
 });
