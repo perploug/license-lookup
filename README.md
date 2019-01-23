@@ -8,7 +8,6 @@ Given the string contents of a package manager file the library can detect depen
 ### Using the library
 
 
-
 ### Todo
 - [x] Add npm support
 - [x] Add pip support
