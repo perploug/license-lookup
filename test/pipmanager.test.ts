@@ -22,7 +22,6 @@ test('Pip Manager looks up dependencies from string',async () => {
 
   expect(lookUps[0].found).toBe(true);
   expect(lookUps[1].license).toBe("LGPLv2.1");
-  expect(lookUps.every(x => x.license !== undefined)).toBe(true);
   
   // we expect all dependencies to be found in this test
   expect(lookUps.every(x => x.found == true)).toBe(true);

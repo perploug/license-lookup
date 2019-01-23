@@ -1,6 +1,6 @@
 {
   "name": "dependency-license",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Lightweight Package License Detector designed to run without access to the entire filesystem",
   "main": "./lib/index.js",
   "scripts": {
