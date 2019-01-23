@@ -1,5 +1,5 @@
 import { IDependencyManager } from "./interfaces/IDependencyManager";
-export declare class DependencyLicense {
+export declare class LicenseLookup {
     managers: Array<IDependencyManager>;
     private manager;
     constructor();
