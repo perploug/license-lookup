@@ -1,32 +1,34 @@
-import {DependencyLicense}  from "../src/index";
-var lib : DependencyLicense;
+import {LicenseLookup}  from "../src/index";
+var lib : LicenseLookup;
 
 beforeEach(() => {
-  lib = new DependencyLicense();
+  lib = new LicenseLookup();
 });
 
 test('Manager factory returns all managers',async () => {
-  expect(lib.managers.length).toBe(3);
+  expect(lib.managers.length).toBe(4);
 });
 
 test('Npm manager identifies package.json',async () => {
   var files = ["package.json", "meh.js", ".sakdjsajdks/asdljhaskjd/asdkas.json"];  
   var matches = lib.matchFilesToManager(files);
-  expect( Object.keys( matches ).length ).toBe(1);
-  expect(matches[ files[0] ].name).toBe("Npm");
+  expect( matches.length ).toBe(1);
+  expect( matches[ 0 ].manager.name).toBe("Npm");
 });
 
 test('Pipy manager identifies requirements.txt',async () => {
   var files = ["requirements.txt","asdasasd.js"];  
   var matches = lib.matchFilesToManager(files);
-  expect( Object.keys( matches ).length ).toBe(1);
-  expect(matches[ files[0] ].name).toBe("Pip");
+  expect( matches.length ).toBe(1);
+  expect( matches[ 0 ].manager.name).toBe("Pip");
 });
 
 test('Library can return multiple managers',async () => {
   var files = ["requirements.txt","package.json"];  
   var matches = lib.matchFilesToManager(files);
-  expect( Object.keys( matches ).length ).toBe(2);
-  expect(matches[ files[0] ].name).toBe("Pip");
-  expect(matches[ files[1] ].name).toBe("Npm");
+  expect( matches.length ).toBe(2);
+
+  //the order will always be in the order they are loaded into the manager collection
+  expect(matches[ 0 ].manager.name).toBe("Npm");
+  expect(matches[ 1 ].manager.name).toBe("Pip");
 });

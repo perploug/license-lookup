@@ -2,7 +2,7 @@ import { IDependencyManager } from "../interfaces/IDependencyManager";
 import {Npm} from "./npm"
 import {Pip} from "./pip"
 import { Sbt } from "./sbt";
-import {Gradle} from ".gradle";
+import {Gradle} from "./gradle";
 
 import minimatch = require("minimatch");
 import { IDependencyFileMatch } from "../interfaces/IDependencyFileMatch";

@@ -1,2 +1,2 @@
-const DependencyLicense = require("./lib/index");
-exports.DependencyLicense = DependencyLicense;
+const LicenseLookup = require("./lib/index");
+exports.LicenseLookup = LicenseLookup;

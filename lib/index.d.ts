@@ -3,7 +3,5 @@ export declare class DependencyLicense {
     managers: Array<IDependencyManager>;
     private manager;
     constructor();
-    matchFilesToManager(paths: string[]): {
-        [key: string]: IDependencyManager;
-    };
+    matchFilesToManager(paths: string[]): import("./interfaces/IDependencyFileMatch").IDependencyFileMatch[];
 }

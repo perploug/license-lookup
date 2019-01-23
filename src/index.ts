@@ -1,7 +1,7 @@
 import { ManagerFactory } from "./managers";
 import { IDependencyManager } from "./interfaces/IDependencyManager";
 
-export class DependencyLicense {
+export class LicenseLookup {
   managers : Array<IDependencyManager>;
   private manager : ManagerFactory;
 
