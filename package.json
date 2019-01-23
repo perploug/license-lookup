@@ -1,5 +1,5 @@
 {
-  "name": "dependency-license",
+  "name": "license-lookup",
   "version": "0.0.2",
   "description": "Lightweight Package License Detector designed to run without access to the entire filesystem",
   "main": "./lib/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/perploug/Dependency-License.git"
+    "url": "git+https://github.com/perploug/license-lookup.git"
   },
-  "author": "",
+  "author": "Zalando Open Source Team, Per Ploug",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/perploug/Dependency-License/issues"
+    "url": "https://github.com/perploug/license-lookup/issues"
   },
-  "homepage": "https://github.com/perploug/Dependency-License#readme",
+  "homepage": "https://github.com/perploug/license-lookup#readme",
   "devDependencies": {
     "@types/jest": "^23.3.13",
     "@types/minimatch": "^3.0.3",
