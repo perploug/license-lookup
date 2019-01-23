@@ -1,7 +1,9 @@
-# Dependency-License
-Lightweight Package License Detector designed to run without access to the entire filesystem
+# License Lookup
+Lightweight package dependency License detector designed to run without access to the entire filesystem.
 
-Given a string representing a given package managers configuration file, this library will look up the licenses for the dependencies.
+Given a list of files (such as files in a git commit) it can detect which checkers to run against select files. 
+
+Given the string contents of a package manager file the library can detect dependencies in the file and optionally attempt to lookup the license of the detected dependency. 
 
 ### Using the library
 
