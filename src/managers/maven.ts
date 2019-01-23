@@ -13,8 +13,13 @@ export class MavenBase {
       var group_name = dep.name.split(":");
 
       try{
-        lookUp.license = await scraper.get(baseUrl + group_name[0] + "/" + group_name[1], "#maincontent table span.lic");
+        var license = await scraper.get(baseUrl + group_name[0] + "/" + group_name[1], "#maincontent table span.lic");
+        if(license !== ""){
+        lookUp.license = license;
         lookUp.found = true;
+        }else{
+          lookUp.found = false;
+        }
       }catch(ex){
         lookUp.found = false;
       }
