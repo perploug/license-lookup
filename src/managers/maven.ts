@@ -16,7 +16,7 @@ export class MavenBase {
       try{
         var license = await scraper.get(baseUrl + group_name[0] + "/" + group_name[1], "#maincontent table span.lic");
         if(license !== ""){
-        lookUp.license = correct(license);
+        lookUp.license = correct(license, { upgrade: false });
         lookUp.found = true;
         lookUp.url = baseUrl + group_name[0] + "/" + group_name[1];
         

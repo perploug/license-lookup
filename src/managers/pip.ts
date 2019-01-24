@@ -23,7 +23,7 @@ export class Pip implements IDependencyManager{
 
           var pipInfoJson = await pipInfo.json();
 
-          lookUp.license = correct(pipInfoJson.info.license);
+          lookUp.license = correct(pipInfoJson.info.license, { upgrade: false });
           lookUp.latestVersion = pipInfoJson.info.version;
 
         }else{

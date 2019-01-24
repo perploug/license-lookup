@@ -22,7 +22,7 @@ export class Npm implements IDependencyManager{
           var npminfoJson = await npmInfo.json();
 
           
-          lookUp.license = correct(npminfoJson.license);
+          lookUp.license = correct(npminfoJson.license, { upgrade: false });
           lookUp.url = "https://www.npmjs.com/package/" + lookUp.name;
           if(npminfoJson.versions){
             lookUp.latestVersion = npminfoJson.versions[npminfoJson.versions.length-1];
