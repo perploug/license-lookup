@@ -23,7 +23,7 @@ test('Gradle Manager looks up dependencies from string',async () => {
   expect(lookUps.length).toBe(10);
 
   expect(lookUps[0].found).toBe(true);
-  expect(lookUps[0].license).toBe("Apache 2.0");
+  expect(lookUps[0].license).toBe("Apache-2.0");
   expect(lookUps[1].license).toBe("MIT");
 
   // we expect all dependencies to be found in this test

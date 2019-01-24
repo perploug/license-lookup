@@ -2,6 +2,7 @@ import { IDependencyManager } from "../interfaces/IDependencyManager";
 import { IDependency } from "../interfaces/IDependency";
 import { IDependencyLookUp } from "../interfaces/IDependencyLooKUp";
 import fetch from "node-fetch";
+const correct = require('spdx-correct')
 
 export class Pip implements IDependencyManager{
   name = "Pip";
@@ -22,7 +23,7 @@ export class Pip implements IDependencyManager{
 
           var pipInfoJson = await pipInfo.json();
 
-          lookUp.license = pipInfoJson.info.license;
+          lookUp.license = correct(pipInfoJson.info.license);
           lookUp.latestVersion = pipInfoJson.info.version;
 
         }else{

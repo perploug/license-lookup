@@ -1,5 +1,6 @@
 import { IDependencyLookUp } from "../interfaces/IDependencyLooKUp";
 import { Scraper } from "../scraper";
+const correct = require('spdx-correct')
 
 export class MavenBase {
   
@@ -15,7 +16,7 @@ export class MavenBase {
       try{
         var license = await scraper.get(baseUrl + group_name[0] + "/" + group_name[1], "#maincontent table span.lic");
         if(license !== ""){
-        lookUp.license = license;
+        lookUp.license = correct(license);
         lookUp.found = true;
         lookUp.url = baseUrl + group_name[0] + "/" + group_name[1];
         

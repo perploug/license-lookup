@@ -22,7 +22,7 @@ test('Sbt Manager looks up dependencies from string',async () => {
   expect(lookUps.length).toBe(10);
 
   expect(lookUps[0].found).toBe(true);
-  expect(lookUps[1].license).toBe("Apache 2.0");
+  expect(lookUps[1].license).toBe("Apache-2.0");
   expect(lookUps.every(x => x.license !== undefined)).toBe(true);
   
   // we expect all dependencies to be found in this test

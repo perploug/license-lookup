@@ -2,7 +2,7 @@ import { IDependencyManager } from "../interfaces/IDependencyManager";
 import { IDependency } from "../interfaces/IDependency";
 import fetch from "node-fetch";
 import { IDependencyLookUp } from "../interfaces/IDependencyLooKUp";
-
+const correct = require('spdx-correct')
 
 export class Npm implements IDependencyManager{
   name = "Npm";
@@ -21,7 +21,8 @@ export class Npm implements IDependencyManager{
          
           var npminfoJson = await npmInfo.json();
 
-          lookUp.license = npminfoJson.license;
+          
+          lookUp.license = correct(npminfoJson.license);
           lookUp.url = "https://www.npmjs.com/package/" + lookUp.name;
           if(npminfoJson.versions){
             lookUp.latestVersion = npminfoJson.versions[npminfoJson.versions.length-1];
