@@ -34,7 +34,6 @@ export class Npm implements IDependencyManager{
       }catch(ex){
 
       }
-
       return lookUp;
     })
 
