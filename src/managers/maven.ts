@@ -17,6 +17,8 @@ export class MavenBase {
         if(license !== ""){
         lookUp.license = license;
         lookUp.found = true;
+        lookUp.url = baseUrl + group_name[0] + "/" + group_name[1];
+        
         }else{
           lookUp.found = false;
         }

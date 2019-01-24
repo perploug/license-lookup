@@ -18,6 +18,8 @@ export class Pip implements IDependencyManager{
         
         if(pipInfo.status === 200){
           lookUp.found = true;
+          lookUp.url = "https://pypi.org/project/" + lookUp.name;
+
           var pipInfoJson = await pipInfo.json();
 
           lookUp.license = pipInfoJson.info.license;

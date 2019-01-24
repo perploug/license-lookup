@@ -18,10 +18,11 @@ export class Npm implements IDependencyManager{
         var npmInfo = await fetch(baseUrl + lookUp.name);
         if(npmInfo.status === 200){
           lookUp.found = true;
-
+         
           var npminfoJson = await npmInfo.json();
 
           lookUp.license = npminfoJson.license;
+          lookUp.url = "https://www.npmjs.com/package/" + lookUp.name;
           if(npminfoJson.versions){
             lookUp.latestVersion = npminfoJson.versions[npminfoJson.versions.length-1];
           }
