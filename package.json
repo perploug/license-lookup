@@ -27,7 +27,8 @@
     "typescript": "^3.2.4"
   },
   "dependencies": {
-    "pm2", "3.2.9",
+    "pm2": "3.2.9",
+    "lodash", "4.17.11"
     "gradle-to-js": "^1.2.0",
     "minimatch": "^3.0.4",
     "node-fetch": "^2.3.0",
