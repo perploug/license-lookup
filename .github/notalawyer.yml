@@ -1,2 +1,4 @@
 onlyAllow:
-  - AGPL-3.0
+  - permissive
+exclude:
+  - networkcopyleft
