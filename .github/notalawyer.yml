@@ -1,0 +1,4 @@
+onlyAllow:
+  - permissive
+exclude:
+  - networkcopyleft
