@@ -1,6 +1,6 @@
 import { IDependencyManager } from "../interfaces/IDependencyManager";
 import { IDependency } from "../interfaces/IDependency";
-import { MavenBase } from "./maven";
+import { MavenBase } from "./maven.base";
 
 
 export class Sbt extends MavenBase implements IDependencyManager {

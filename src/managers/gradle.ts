@@ -1,6 +1,6 @@
 import { IDependencyManager } from "../interfaces/IDependencyManager";
 import { IDependency } from "../interfaces/IDependency";
-import { MavenBase } from "./maven";
+import { MavenBase } from "./maven.base";
 const g2js = require('gradle-to-js/lib/parser');
 
 export class Gradle extends MavenBase implements IDependencyManager {
