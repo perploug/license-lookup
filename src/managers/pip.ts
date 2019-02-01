@@ -1,53 +1,35 @@
 import { IDependencyManager } from "../interfaces/IDependencyManager";
 import { IDependency } from "../interfaces/IDependency";
-import { IDependencyLookUp } from "../interfaces/IDependencyLooKUp";
-import fetch from "node-fetch";
-const correct = require('spdx-correct')
+import { PypiBase } from "./pypi.base";
 
-export class Pip implements IDependencyManager{
+export class Pip extends PypiBase implements IDependencyManager{
   name = "Pip";
-  globs = ["requirements*.txt"]
-
-  async lookup(dependencies : Array<IDependencyLookUp>){
-
-    var baseUrl = "https://pypi.org/pypi/"
-    var tasks = dependencies.map( async dep => {
-      var lookUp : IDependencyLookUp = {...dep};
-      
-      try{
-        var pipInfo = await fetch(baseUrl + lookUp.name + "/json");
-        
-        if(pipInfo.status === 200){
-          lookUp.found = true;
-          lookUp.url = "https://pypi.org/project/" + lookUp.name;
-
-          var pipInfoJson = await pipInfo.json();
-
-          lookUp.license = correct(pipInfoJson.info.license, { upgrade: false });
-          lookUp.latestVersion = pipInfoJson.info.version;
-
-        }else{
-          lookUp.found = false;
-        }  
-      }catch(ex){
-
-      }
-
-      return lookUp;
-    })
-
-    var lookUps = await Promise.all(tasks);
-    return lookUps;
-  }
+  globs = ["pipfile"]
 
   async detect(manifest : string){
-    var deps = manifest
+
+    //simplify the use of [[]]
+    manifest = manifest.replace("[[", "[").replace("]]", "]");
+
+    //split the pipfile in groups and find the packages sections 
+    //currently we only care about packages deployed with the codebase, not dev-deps
+    var packageSection = manifest
+                    .split("[")
+                    .filter(x => x.indexOf("packages]") === 0);
+
+    if(packageSection.length === 0)
+      return [];
+
+    var packageManifest = packageSection.join("\n").replace("packages]", ''); 
+    
+    var deps = packageManifest
                 .split("\n")
-                .map(x => x.split("=="))
+                .filter(x => (x.length > 0 && x.indexOf("#") !== 0 && x.indexOf("-")))
+                .map(x => x.split("="))
                 .map(x => {
-                  var idep : IDependency = {name: x[0]};
+                  var idep : IDependency = {name: x[0].trim()};
                   if(x.length == 2){
-                    idep.version = x[1];
+                    idep.version = x[1].replace("\"", "").replace("'", "").trim();
                   }
                   return idep;
                 });
