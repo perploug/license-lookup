@@ -30,5 +30,5 @@ test('Library can return multiple managers',async () => {
 
   //the order will always be in the order they are loaded into the manager collection
   expect(matches[ 0 ].manager.name).toBe("Npm");
-  expect(matches[ 1 ].manager.name).toBe("Requirments");
+  expect(matches[ 1 ].manager.name).toBe("Requirements");
 });

@@ -35,3 +35,5 @@ export class PypiBase {
     var lookUps = await Promise.all(tasks);
     return lookUps;
   }
+
+}

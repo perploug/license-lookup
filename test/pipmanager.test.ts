@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { Pip } from "../src/managers/pip";
 
 test('Pip Manager finds dependencies from string',async () => {
-  const config = readFileSync("./test/assets/transformer-pipfile", "utf8").toString();
+  const config = readFileSync("./test/assets/transformer.pipfile", "utf8").toString();
   
   var manager = new Pip();
   var dependencies = await manager.detect(config);
@@ -11,7 +11,7 @@ test('Pip Manager finds dependencies from string',async () => {
 });
 
 test('Pip Manager looks up dependencies from string',async () => {
-  const config = readFileSync("./test/assets/transformer-pipfile", "utf8").toString();
+  const config = readFileSync("./test/assets/transformer.pipfile", "utf8").toString();
 
   var manager = new Pip();
   var dependencies = await manager.detect(config);
