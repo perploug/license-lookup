@@ -3,6 +3,7 @@ import {Npm} from "./npm"
 import {Pip} from "./pip"
 import { Sbt } from "./sbt";
 import {Gradle} from "./gradle";
+import {Requirements} from "./requirements";
 
 import minimatch = require("minimatch");
 import { IDependencyFileMatch } from "../interfaces/IDependencyFileMatch";
@@ -19,6 +20,7 @@ export class ManagerFactory {
       this.managers.push(new Pip());
       this.managers.push(new Sbt());
       this.managers.push(new Gradle());
+      this.managers.push(new Requirements());
   }
   
   // this will return a list of files to process, 
