@@ -69,11 +69,14 @@ for(const match of matches){
 
 ### Todo
 - [x] Add npm support
-- [x] Add pip support
+- [x] Add pipfile support
+- [x] Add requirements.txt support
 - [x] Add SBT support
 - [x] Add maven support
 - [x] Add gradle support
-- [ ] Add pom.xml support
+- [x] Add pom.xml support 
+- [x] Add Gemfile support
+- [ ] Add Go Dep support
 - [ ] Add yarn support
 
 ### Developing

@@ -30,6 +30,7 @@
     "gradle-to-js": "^1.2.0",
     "minimatch": "^3.0.4",
     "node-fetch": "^2.3.0",
+    "pom-parser": "^1.1.1",
     "spdx-correct": "^3.1.0",
     "x-ray": "^2.3.3"
   },

@@ -6,7 +6,7 @@ beforeEach(() => {
 });
 
 test('Manager factory returns all managers',async () => {
-  expect(lib.managers.length).toBe(5);
+  expect(lib.managers.length).toBe(7);
 });
 
 test('Npm manager identifies package.json',async () => {
