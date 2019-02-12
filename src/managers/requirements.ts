@@ -10,7 +10,15 @@ export class Requirements extends PypiBase implements IDependencyManager{
     var deps = manifest
                 .split("\n")
                 .filter(x => (x.length > 0 && x.indexOf("#") !== 0 && x.indexOf("-") !== 0))
-                .map(x => x.split("=="))
+                .map(x => {
+                  if(x.indexOf("==") > 0)
+                    return x.split("==")
+                  
+                  if(x.indexOf(">=") > 0)
+                    return x.split(">=")
+
+                  return x;
+                })
                 .map(x => {
                   var idep : IDependency = {name: x[0].trim()};
                   if(x.length == 2){
