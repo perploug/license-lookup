@@ -6,6 +6,7 @@ import {Gradle} from "./gradle";
 import {Requirements} from "./requirements";
 import {Pom} from "./pom";
 import {Gem} from "./gem";
+import {Poetry} from "./poetry";
 
 import minimatch = require("minimatch");
 import { IDependencyFileMatch } from "../interfaces/IDependencyFileMatch";
@@ -25,6 +26,7 @@ export class ManagerFactory {
       this.managers.push(new Requirements());
       this.managers.push(new Pom());
       this.managers.push(new Gem());
+      this.managers.push(new Poetry());
   }
   
   // this will return a list of files to process, 

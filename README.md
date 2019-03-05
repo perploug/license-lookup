@@ -76,6 +76,7 @@ for(const match of matches){
 - [x] Add gradle support
 - [x] Add pom.xml support 
 - [x] Add Gemfile support
+- [x] Add Poetry support
 - [ ] Add Go Dep support
 - [ ] Add yarn support
 
