@@ -1,0 +1,8 @@
+Opentracing
+opentracing-utils
+psycopg2
+PYKUBE>=0.15.0
+requests~=2.12
+scm-source>=1.0.9
+stups-tokens>=1.0.18
+zmon-cli>=1.0.57
