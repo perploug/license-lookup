@@ -1,6 +1,6 @@
 {
   "name": "license-lookup",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Lightweight Package License Detector designed to run without access to the entire filesystem",
   "main": "./lib/index.js",
   "scripts": {
