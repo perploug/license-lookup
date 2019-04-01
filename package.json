@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "jest"
+    "test": "nyc jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "@types/node-fetch": "^2.1.4",
     "@types/x-ray": "^2.3.2",
     "jest": "^23.6.0",
+    "nyc": "^13.3.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.4"
   },
@@ -30,7 +31,7 @@
     "gradle-to-js": "^1.2.0",
     "minimatch": "^3.0.4",
     "node-fetch": "^2.3.0",
-    "pom-parser": "^1.1.1",
+    "pom-parser": "git+https://github.com/perploug/node-pom-parser.git",
     "spdx-correct": "^3.1.0",
     "x-ray": "^2.3.3"
   },
