@@ -22,9 +22,9 @@
     "@types/minimatch": "^3.0.3",
     "@types/node-fetch": "^2.1.4",
     "@types/x-ray": "^2.3.2",
-    "jest": "^23.6.0",
+    "jest": "^24.5.0",
     "nyc": "^13.3.0",
-    "ts-jest": "^23.10.5",
+    "ts-jest": "^24.0.1",
     "typescript": "^3.2.4"
   },
   "dependencies": {
