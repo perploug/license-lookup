@@ -2,7 +2,7 @@ import { IDependencyManager } from "../interfaces/IDependencyManager";
 import { IDependency } from "../interfaces/IDependency";
 import { MavenBase } from "./maven.base";
 
-const pomparser = require("pom-parser");
+const pomparser = require("node-pom-parser-fork");
 
 export class Pom extends MavenBase implements IDependencyManager {
   name = "Pom";

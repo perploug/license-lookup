@@ -1,6 +1,6 @@
 {
   "name": "license-lookup",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Lightweight Package License Detector designed to run without access to the entire filesystem",
   "main": "./lib/index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "gradle-to-js": "^1.2.0",
     "minimatch": "^3.0.4",
     "node-fetch": "^2.3.0",
-    "pom-parser": "git+https://github.com/perploug/node-pom-parser.git",
+    "node-pom-parser-fork": "^1.1.2",
     "spdx-correct": "^3.1.0",
     "x-ray": "^2.3.3"
   },
