@@ -30,7 +30,7 @@
   "dependencies": {
     "gradle-to-js": "^1.2.0",
     "minimatch": "^3.0.4",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^3.1.1",
     "node-pom-parser-fork": "^1.1.2",
     "spdx-correct": "^3.1.0",
     "x-ray": "^2.3.3"
